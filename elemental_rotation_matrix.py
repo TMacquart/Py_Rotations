@@ -19,7 +19,7 @@
 from math import pi
 import numpy as np
 
-def elemental_rotations_matrix(axis, theta, Type):
+def elemental_rotation_matrix(axis, theta, Type):
     # axis is a string, either 'x', 'y', or 'z'
     # theta is a scalar or 1D-array of angles either an rad or deg.
     # Type = 'deg' or 'rad' 

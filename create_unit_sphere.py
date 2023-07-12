@@ -6,7 +6,7 @@
 import math
 import numpy as np
 import plotly.graph_objects as go; import plotly.io as pio; pio.renderers.default = 'browser'
-from   elemental_rotations_matrix import elemental_rotations_matrix 
+from   elemental_rotation_matrix   import elemental_rotation_matrix
 
 
 def create_unit_sphere(nY=51, nZ=51, PLOT=True):  # local function for the 3D failure envelope    
@@ -17,8 +17,8 @@ def create_unit_sphere(nY=51, nZ=51, PLOT=True):  # local function for the 3D fa
     anglesZ = np.linspace(start=0, stop=2*math.pi,num=nZ+1)
     anglesZ = anglesZ[1::]
     
-    Ry = elemental_rotations_matrix(axis='y', theta=anglesY, Type='rad')
-    Rz = elemental_rotations_matrix(axis='z', theta=anglesZ, Type='rad')
+    Ry = elemental_rotation_matrix(axis='y', theta=anglesY, Type='rad')
+    Rz = elemental_rotation_matrix(axis='z', theta=anglesZ, Type='rad')
     UnitVector = np.array([1,0,0])
     V = np.zeros([3,nY,nZ])
     for i in range(nY):
